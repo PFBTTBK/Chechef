@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="70"
+   height="70"
+   viewBox="0 0 18.520832 18.520834"
+   version="1.1"
+   id="svg1"
+   inkscape:export-filename="pdos-btn-si.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect6"
+       is_visible="true"
+       lpeversion="1" />
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers stroke fill"
+       d="m 7.9375,2.6458333 h 2.645833 V 7.9375 H 15.875 v 2.645833 H 10.583333 V 15.875 H 7.9375 V 10.583333 H 2.6458333 V 7.9375 H 7.9375 Z"
+       id="path5"
+       inkscape:path-effect="#path-effect6"
+       inkscape:original-d="m 7.9375,2.6458333 h 2.645833 V 7.9375 H 15.875 v 2.645833 H 10.583333 V 15.875 H 7.9375 V 10.583333 H 2.6458333 V 7.9375 H 7.9375 Z"
+       sodipodi:nodetypes="ccccccccccccc" />
+  </g>
+</svg>

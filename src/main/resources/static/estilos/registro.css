@@ -1,0 +1,96 @@
+:root{
+    --uno: clamp(2px, 1svw, 4px);
+    --dos: clamp(4px, 2svw, 8px);
+    --cuatro: clamp(8px, 4svw, 16px);
+}
+
+*{
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+.negrita{
+    font-weight: bold;
+}
+
+.sangria{
+    padding-left: var(--dos);
+}
+
+main{
+    padding: var(--cuatro) 0 clamp(18px, 9svh, 36px) 0;
+}
+
+.pedido-bg{
+    animation-duration: 0.3s;
+    animation-name: notificacion;
+    animation-iteration-count: 3;
+    animation-timing-function: linear;
+    border-color: green;
+    border-style: solid;
+    border-width: 0;
+    box-sizing: border-box;
+    padding-top: var(--dos);
+}
+
+@keyframes notificacion{
+    50% { border-width: clamp(4px, 2svw, 8px); }
+}
+
+.pedido-nombre{
+    background-color: green;
+    border-radius: var(--uno);
+    color: white;
+    display: grid;
+    font-size: clamp(12px, 6svw, 24px);
+    height: clamp(16px, 8svw, 32px);
+    margin-left: var(--cuatro);
+    padding-left: var(--uno);
+    padding-right: var(--uno);
+    place-items: center;
+    width: fit-content;
+}
+
+.pedido-nombre::after{
+    border: solid 1px green;
+    content: '';
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.eleccion-bg{
+    border-bottom: solid 1px green;
+    display: grid;
+    gap: var(--dos);
+    grid-template-columns: auto 1fr;
+}
+
+footer{
+    bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: clamp(18px, 9svh, 36px);
+    place-items: center;
+    position: fixed;
+    width: 100%;
+}
+
+button{
+    background: radial-gradient(rgb(0, 150, 0), rgb(0, 100, 0), rgb(0, 100, 0));
+    border: none;
+    border-radius: clamp(2px, 1svh, 4px);
+    color: white;
+    height: clamp(14px, 7svh, 28px);
+    font-size: clamp(10px, 5svh, 20px);
+    padding: 0 clamp(2px, 1svh, 4px);
+    width: fit-content;
+}
+
+/* Posición relevante ------------------------------------------------------------------------------------------------*/
+
+.oculto{
+    display: none;
+}

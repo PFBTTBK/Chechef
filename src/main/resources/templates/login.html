@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/xhtml/1999"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Inicio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="/estilos/general.css"/>
+    </head>
+    <body>
+        <div th:if="${param.error}" class="alert">
+            <span th:utext="${session.SPRING_SECURITY_LAST_EXCEPTION.message}"></span>
+            <button></button>
+            <script defer>
+                document.querySelector('.alert button').addEventListener('click', function(){ 
+                    this.closest('.alert').remove();
+                });
+            </script>
+        </div>
+        <div th:if="${param.logout}" class="alert">
+            <span th:utext="'La sesión ha cerrado'"></span>
+            <button></button>
+            <script defer>
+                document.querySelector('.alert button').addEventListener('click', function(){ 
+                    this.closest('.alert').remove();
+                });
+            </script>
+        </div>
+        
+        <form th:action="@{/login}" method="post">
+            <p>
+                <label for="username" th:text="'Nombre'"></label>
+                <input name="username" type="text" placeholder="Establecimiento"/>
+            </p>
+            <p>
+                <label for="password" th:text="'Contraseña'"></label>
+                <input name="password" type="password" placeholder="Contraseña"/>
+            </p>
+            <input class="lgn-inp-sbmt" type="submit" value="INGRESAR"/>
+        </form>
+    </body>
+</html>

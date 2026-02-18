@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Registro</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" th:href="@{/estilos/general.css}"/>
+        <link rel="stylesheet" th:href="@{/estilos/registrar.css}"/>
+        <script type="module" src="/javascript/registrar.js" defer></script>
+    </head>
+    <body>
+        <main class="cuerpo">
+            <div th:each="articulo: ${articulos}" id="art" class="art-bg">
+                <div class="art-bg-arriba">
+                    <p th:id="${'contador-' + articulo.nombre}" class="lateral-bg contador">0</p>
+                    <div class="art-bg-nombre">
+                        <p th:text="${articulo.nombre}" class="art-nombre" th:articulo="${articulo.idArticulo}" th:nombre="${articulo.nombre}"></p>
+                    </div>
+                    <div class="lateral-bg">
+                        <button class="btn btn-mas" onclick="agregar(this)"></button>
+                    </div>
+                </div>
+                <div th:if="${!articulo.ingredientes.isEmpty()}" class="art-bg-abajo">
+                    <button class="btn-restaurar" onclick="restablecer(this)"></button>
+                    <th:block th:each="ingrediente: ${articulo.ingredientes}">
+                        <a th:if="${ingrediente.tipos.isEmpty()}" class="btn-ingrediente" th:style="|background-image: url('Imagenes/${ingrediente.foto}')|" onclick="elegirIngrediente(this)" th:ingrediente="${ingrediente.idIngrediente}" th:nombre="${ingrediente.nombre}"></a>
+                        <div th:if="${!ingrediente.tipos.isEmpty()}" class="tipos-bg">   
+                            <a th:each="tipo: ${ingrediente.tipos}" th:class="${'btn-ingrediente' + (tipo.seleccionado ? '' : ' ing-deseleccionado')}" th:style="|background-image: url('Imagenes/${tipo.foto}')|" onclick="elegirTipo(this)" th:ingrediente="${ingrediente.idIngrediente}" th:tipo="${tipo.idTipo}" th:nombre="${tipo.tipo}"></a>
+                        </div>
+                    </th:block>
+                </div>
+            </div>
+        </main>
+        <footer class="pdp">
+            <div class="pdp-btn-bg">
+                <a class="pdp-btn pdp-btn-abrir" onclick="abrir(this)"></a>
+            </div>
+            <div class="pdp-btn-bg">
+                <a class="pdp-btn pdp-btn-logout"></a>
+            </div>
+            <input id="pdp-inp" type="text" class="pdp-inp"/>
+            <div class="pdp-btn-bg">
+                <a class="pdp-btn pdp-btn-enviar" onclick="enviar()"></a>
+            </div>
+            <div class="pdp-pedidos-bg">
+                <div id="registro" class="pdp-actual-bg">
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

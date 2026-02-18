@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Registro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script th:inline="javascript" type="module">
+            import Pedido from "./javascript/Pedido.js";
+            const pedidos = ([[${pedidos}]]).map((pedido) => Object.assign(new Pedido(), pedido));
+            window.pedidos = pedidos;
+        </script>
+        <script src="./javascript/registro.js" type="module" defer></script>
+        <link rel="stylesheet" href="./estilos/registro.css"/>
+    </head>
+    <body>
+        <main>
+            <div th:each="pedido: ${pedidos}" class="pedido-bg negrita">
+                <p th:text="${pedido.mesa == 0 ? pedido.nombre : 'Mesa ' + pedido.mesa}" class="pedido-nombre"></p>
+                <div th:each="eleccion: ${pedido.elecciones}" class="eleccion-bg" th:data-responsable="${eleccion.articulo.responsable}">
+                    <p th:text="${eleccion.cantidad}" class="negrita sangria"></p>
+                    <div>
+                        <p th:text="${eleccion.articulo.nombre}"></p>
+                        <p th:if="${eleccion.omisiones != ''}" th:text="${eleccion.omisiones}"></p>
+                        <p th:if="${eleccion.decisiones != ''}" th:text="${eleccion.decisiones}"></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <button onclick="visibilidad('Cocina')">Cocina</button>
+            <button onclick="visibilidad('Barra')">Barra</button>
+        </footer>
+    </body>
+</html>

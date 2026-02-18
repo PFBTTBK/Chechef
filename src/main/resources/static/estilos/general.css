@@ -1,0 +1,50 @@
+:root{
+    --pcinco: clamp(1px, 0.5svw, 2px);
+    --uno: clamp(2px, 1svw, 4px);
+    --dos: clamp(4px, 2svw, 8px);
+    --cuatro: clamp(8px, 4svw, 16px);
+    --seis: clamp(12px, 6svw, 24px);
+}
+
+.alert{
+    align-items: center;
+    align-self: center;
+    background: #333;
+    border: solid var(--uno) yellow;
+    border-radius: var(--cuatro);
+    bottom: 50%;
+    box-shadow: var(--dos) var(--dos) var(--dos) rgba(0,0,0,0.6);
+    color: #fff;
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(12px, 6svw, 24px);
+    font-weight: bold;
+    height: auto;
+    justify-self: center;
+    justify-content: center;
+    opacity: 1;
+    overflow: hidden;
+    padding: var(--seis);
+    position: fixed;
+    right: 50%;
+    text-align: center;
+    transform: translate(50%, 50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: clamp(120px, 60svw, 240px);
+    z-index: 1000;
+}
+
+.alert button{
+    aspect-ratio: 1/1;
+    background-color: red;
+    background-image: url('/imagenes/iconoNo.svg');
+    background-size: contain;
+    border: none;
+    border-radius: 50%;
+    height: var(--cuatro);
+    position: absolute;
+    right: var(--dos);
+    top: var(--dos);
+    transform: rotateZ(45deg);
+    width: var(--cuatro);
+}

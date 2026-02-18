@@ -1,0 +1,25 @@
+<svg width="100%" height="100%" viewBox="0 0 100% 100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#filter0_ig_5_59)">
+        <rect x="0" y="0" width="100%" height="100%" rx="30" fill="#BC9C59" />
+    </g>
+    <defs>
+        <filter id="filter0_ig_5_59" x="0" y="0" width="218" height="68"
+            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+            <feColorMatrix in="SourceAlpha" type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+            <feOffset dx="2" dy="2" />
+            <feGaussianBlur stdDeviation="2" />
+            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_5_59" />
+            <feTurbulence type="fractalNoise" baseFrequency="0.5 0.5" numOctaves="3" seed="8352" />
+            <feDisplacementMap in="effect1_innerShadow_5_59" scale="8" xChannelSelector="R"
+                yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
+            <feMerge result="effect2_texture_5_59">
+                <feMergeNode in="displacedImage" />
+            </feMerge>
+        </filter>
+    </defs>
+</svg>
